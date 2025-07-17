@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Implant Academy - Dr. Kim's Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffffff 1%, #939598 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .invitation-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #5c5c5c, #1C1C1C);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .doctor-intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .doctor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #7B4C9E, #feca57);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid white;
+        }
+
+        .doctor-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .invitation-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .gif-container {
+            height: 120px;
+            background: linear-gradient(45deg, #f9f9f9, #dadada);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-element {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .event-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .schedule {
+            margin-bottom: 20px;
+        }
+
+        .schedule h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-section {
+            background: linear-gradient(45deg, #7B4C9E, #2a272d);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .current-price {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .free-product {
+            background: #F0699A;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .rsvp-button {
+            width: 100%;
+            background: linear-gradient(45deg, #1C1C1C, #1C1C1C);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .rsvp-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .instructors {
+            margin-bottom: 15px;
+        }
+
+        .instructors h4 {
+            color: #2c5aa0;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .instructor-list {
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 480px) {
+            .invitation-card {
+                max-width: 350px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invitation-card">
+        <div class="header">
+            <div class="doctor-intro">
+
+                <div class="animated-element">
+                    <img src="https://cdn.shopify.com/s/files/1/0589/0863/9298/files/Artboard_10_37abe5ca-2f0c-4e64-a06a-d1c217ba25db.png?v=1752790135"
+                        alt="Logo" style="width: 70px; height: 70px; object-fit: contain;">
+                </div>
+                <div>
+                    <div class="doctor-name">Dr. Sean Sunyoto
+                    </div>
+                    <div class="invitation-text">cordially invites you to</div>
+
+                </div>
+            </div>
+            <div class="course-title">Oasis Implant Academy</div>
+            <br>
+            <p>1 Day - Oasis Implant Academy Basic Course </p>
+
+        </div>
+
+        <div class="gif-container" style="padding: 0; height: auto;">
+            <img src="https://cdn.shopify.com/s/files/1/0589/0863/9298/files/tg.png?v=1752789123" alt="Course Banner"
+                style="width: 100%; height: auto; display: block;  ">
+        </div>
+
+
+        <div class="content">
+            <div class="event-details">
+                <div class="detail-row">
+                    <span class="detail-label">Date:</span>
+                    <span>Sunday, August 3, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Location:</span>
+                    <span>Loma Linda, CA</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CE Credits:</span>
+                    <span>8 Credits</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Time:</span>
+                    <span>8:00 AM - 5:00 PM</span>
+                </div>
+            </div>
+
+            <div class="instructors">
+                <h4>Expert Instructors:</h4>
+                <div class="instructor-list">
+                    Dr. Jaewoo Cho • Dr. Charles Park<br>
+                    Dr. Jonathan Song • Dr. Sean Sunyoto
+                </div>
+            </div>
+
+            <div class="schedule">
+                <h3>📅 Schedule Highlights</h3>
+                <div class="schedule-item">
+                    <span>8:15 AM</span>
+                    <span>Introduction to Implantology</span>
+                </div>
+                <div class="schedule-item">
+                    <span>9:00 AM</span>
+                    <span>Surgical Protocols</span>
+                </div>
+                <div class="schedule-item">
+                    <span>10:15 AM</span>
+                    <span>Guided Surgery Overview</span>
+                </div>
+                <div class="schedule-item">
+                    <span>12:00 PM</span>
+                    <span>Lunch (provided)</span>
+                </div>
+                <div class="schedule-item">
+                    <span>1:00 PM</span>
+                    <span>Hands-On Training</span>
+                </div>
+                <div class="schedule-item">
+                    <span>3:15 PM</span>
+                    <span>Guided Surgery Practice</span>
+                </div>
+            </div>
+
+            <div class="pricing-section">
+                <div>🎁 Special Offer</div>
+                <div class="original-price">Originally $950</div>
+                <div class="current-price">$559</div>
+                <br>
+                <div> <img src="https://cdn.shopify.com/s/files/1/0589/0863/9298/files/bonrprn.png?v=1752791697"
+                        alt="Logo" style="width: 20%; height: 20%; object-fit: cover;   animation: pulse 2s infinite;">
+                </div>
+                <br>
+                <div>Ticket + Bone Pen Included</div>
+                <div class="free-product">+ FREE BONE PEN Worth $950</div>
+            </div>
+        </div>
+
+        <button class="rsvp-button"
+            onclick="window.location.href='https://oasisimplantacademy.com/products/oasis-implant-academy-basic-course';">
+            RSVP NOW 🎯
+        </button>
+    </div>
+    </div>
+
+    <script>
+        function handleRSVP() {
+            // Add animation effect
+            const button = document.querySelector('.rsvp-button');
+            button.style.transform = 'scale(0.95)';
+            button.innerHTML = 'Processing... ⏳';
+
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+                button.innerHTML = 'Thank you! 🎉';
+                button.style.background = 'linear-gradient(45deg, #7B4C9E, #7B4C9E)';
+            }, 1000);
+
+            setTimeout(() => {
+                alert('Please Purchase the Ticket Now!');
+                button.innerHTML = 'RSVP NOW 🎯';
+            }, 2000);
+        }
+
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const card = document.querySelector('.invitation-card');
+
+            // Add hover effect for the entire card
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+
+            // Animate schedule items on scroll/load
+            const scheduleItems = document.querySelectorAll('.schedule-item');
+            scheduleItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateX(-20px)';
+                    item.style.transition = 'all 0.5s ease';
+
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
